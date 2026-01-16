@@ -1,26 +1,32 @@
+const Sidebar = () => {
+  const menus = ["Home", "Profile", "Settings", "Logout"];
 
-export default function Product ({title,price}) {
-return (
-    <div>
-        <h3>{title}</h3>
-        <p>{price}</p>
-    </div>
-)
-}
-
-const Button = ({children}) => {
   return (
-    <button className="btn-primary">
-     {children}
-      
-    </button>
+    <aside>
+      <ul>
+        {menus.map(item=>{
+          return (<li key={item}>{item}</li>)
+        })}
+        
+      </ul>
+    </aside>
   );
 };
 
-export default function App() {
+const Sidebar = () => {
+  const menuItems = [
+    { id: 1, text: "Home", icon: "🏠" },
+    { id: 2, text: "Settings", icon: "⚙️" },
+    { id: 3, text: "Like", icon: "❤️" }
+  ];
+
   return (
-    <Button>
-      Click Me <span>🚀</span>
-    </Button>
+    <ul>
+       {menuItems.map((item)=>(
+        (<li key={item.id}>{item.icon + item.text}</li>)
+       ))
+       }
+       
+    </ul>
   );
-}
+};
