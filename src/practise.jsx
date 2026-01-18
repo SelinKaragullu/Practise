@@ -1,32 +1,14 @@
-const Sidebar = () => {
-  const menus = ["Home", "Profile", "Settings", "Logout"];
+export default function App() {
+  
+  // 1. Fonksiyonu burada tanımla
+  const handleClick = () => {
+    alert("clicked")
+  }
 
   return (
-    <aside>
-      <ul>
-        {menus.map(item=>{
-          return (<li key={item}>{item}</li>)
-        })}
-        
-      </ul>
-    </aside>
+    <div>
+      {/* 2. onClick olayını butona bağla */}
+      <button onClick={handleClick}>Tıkla Bana</button>
+    </div>
   );
-};
-
-const Sidebar = () => {
-  const menuItems = [
-    { id: 1, text: "Home", icon: "🏠" },
-    { id: 2, text: "Settings", icon: "⚙️" },
-    { id: 3, text: "Like", icon: "❤️" }
-  ];
-
-  return (
-    <ul>
-       {menuItems.map((item)=>(
-        (<li key={item.id}>{item.icon + item.text}</li>)
-       ))
-       }
-       
-    </ul>
-  );
-};
+}
