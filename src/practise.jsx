@@ -1,43 +1,20 @@
-const response = await fetch ()
+async function createTodo () {
+
+try {
+  const response = await fetch ("https://jsonplaceholder.typicode.com/todos", {
+  method: "POST",
+  headers: {
+   "Content-Type": "application/json"
+  },
+  body: JSON.stringify({ title: 'React öğren', completed: false, userId: 1 })
+})
 const data = await response.json()
-
 console.log(data)
-
-fetch()
-.then(response=>response.json())
-.then(data=>console.log(data))
-.catch(err=>console.log(err))
-
-async function getSug () {
-  const response = await fetch()
-  const data = await response.json()
 }
 
-getSug()
 
-
-useEffect(()=>{
-const getData = async ()=>{
-try{ const response = await fetch ()
-  const data = await response.json()
-
-}catch(error{
-
-  
+catch (error) {
 console.log(error)
-throw new Error ("")
 }
 }
 
-getData()
-
-},[])
-
-
-async function getTodo () {
-  const response = await fetch ("https://jsonplaceholder.typicode.com/todos/1")
-
-  const data = await response.json()
-}
-
-getTodo()
