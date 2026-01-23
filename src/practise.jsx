@@ -1,20 +1,11 @@
-async function createTodo () {
-
-try {
-  const response = await fetch ("https://jsonplaceholder.typicode.com/todos", {
-  method: "POST",
-  headers: {
-   "Content-Type": "application/json"
-  },
-  body: JSON.stringify({ title: 'React öğren', completed: false, userId: 1 })
-})
+async function getPostComments (postId) {
+try{
+const response = await fetch (`https://jsonplaceholder.typicode.com/comments?postId=${postId}`)
 const data = await response.json()
 console.log(data)
-}
-
-
-catch (error) {
-console.log(error)
+}catch(error){
+console.error("something is wrong")
 }
 }
 
+getPostComments(1)
