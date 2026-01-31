@@ -16,5 +16,5 @@ const data = await response.json()
 }
 
 
- getData
+ getData()
 },[])
