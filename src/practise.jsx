@@ -1,20 +1,18 @@
-useEffect(()=>{
-const getData = async()=>{
-
+React.useEffect (()=>{
+const loadData = async()=>{
     try{
-const response = await fetch(xxx)
-const data = await response.json()
-
-    console.log(data)
-    } catch(err){
-        console.log(err)
-    } finally {
-        console.log("loading completed")
+    const loadedMovies = await getMoviesData()
+    setMovies(loadedMovies)
+    
+    } catch (err) {
+setError("failed")
+console.log(err)
+    }finally {
+console.log("completed")
+setLoading(false)
     }
-
-
 }
 
 
- getData()
-},[] )
+loadData()
+},[])
