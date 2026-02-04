@@ -41,3 +41,13 @@ isFavorite,removeFromFavorites,addToFavorites,favorites
         {children}
     </MovieContext.Provider>
 }
+
+
+
+const favorite =isFavorite(movie.id)
+
+function onFavoriteClick (e) {
+e.preventDefault()
+if(favorite) {removeFromFavorites(movie.id)}
+else {addToFavorites(movie)}
+}
