@@ -17,8 +17,27 @@ useEffect(()=>{
     localStorage.setItem("favorites", JSON.stringify(favorites))
 },[favorites])
 
+const addToFavorites = (movie)=>{
+setFavorites(prev=>[...prev, movie])
+}
 
-    return <MovieContext.Provider>
+const removeFromFavorites = (movieId)=>{
+setFavorites(prev=>prev.filter((movie)=>movieId !== movie.id))
+}
+
+const isFavorite = (movieId)=>{
+favorites.some(movie=>movie.id===movieId
+
+)
+}
+
+const value = {
+isFavorite,removeFromFavorites,addToFavorites,favorites
+
+}
+
+
+    return <MovieContext.Provider value={value}>
         {children}
     </MovieContext.Provider>
 }
