@@ -13,10 +13,23 @@ const handleClick = (getCurrentId)=>{
     setSelected(selected === getCurrentId ? null : getCurrentId)
 }
 
-    return <div> 
 
+const handleMultipleSelection = (getCurrentId)=> {
+cpyMultiple = [...multiple]
+if(cpyMultiple.includes(getCurrentId)){
+   cpyMultiple = cpyMultiple.filter((id)=>id!==getCurrentId)
+} else {
+    cpyMultiple.push(getCurrentId)
+}
+setMultiple(cpyMultiple)
+}
+
+    return <div> 
+<button onClick={()=>setEnableMultiSelection(!enableMultiSelection)}>Enable Multi Selection</button>
 {data.map(item=>
-    <div onClick={()=>handleClick(item.id)}
+    <div onClick={enableMultiSelection ? 
+        ()=>handleMultipleSelection(item.id) : 
+        ()=>handleClick(item.id)}
     key={item.id}>{item.id} 
         <div>
         <h3>+</h3>
