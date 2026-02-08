@@ -9,7 +9,7 @@ function App () {
 
 const handleClick = (getCurrentId)=>{
     console.log(getCurrentId)
-    setSelected(getCurrentId)
+    setSelected(getCurrentId === selected ? null : getCurrentId)
 }
 
     return <div> 
