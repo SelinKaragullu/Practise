@@ -6,10 +6,11 @@ import data from "./practise1"
 function App () {
 
     const [selected,setSelected] = React.useState(null)
+    const [enableMultiSelection,setEnableMultiSelection] = useState(false)
 
 const handleClick = (getCurrentId)=>{
     console.log(getCurrentId)
-    setSelected(getCurrentId === selected ? null : getCurrentId)
+    setSelected(selected === getCurrentId ? null : getCurrentId)
 }
 
     return <div> 
