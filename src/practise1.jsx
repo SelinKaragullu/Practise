@@ -1,7 +1,5 @@
-const data = [
-{id:1, text:"a"},
-{id:2, text:"b"},
-{id:3, text:"c"}
-]
-export default data
-
+export default function RandomColor () {
+    return <div className="container">
+<button>Generate</button>
+    </div>
+}
