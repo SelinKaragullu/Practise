@@ -26,7 +26,9 @@ useEffect(()=>{
 },[count])
 
 
-useEffect
+useEffect(()=>{
+    if(products && products.length === 100) setDisableButton(true)
+})
 
 if(loading) {
    return <div>Loading data!</div>
