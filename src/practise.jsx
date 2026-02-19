@@ -16,6 +16,8 @@ const handleClick = (getCurrentId)=>{
 }
 
 
+
+
 const handleMultipleSelection = (getCurrentId) => {
     let cpyMultiple = [...multiple]
 if(multiple.includes(getCurrentId))
