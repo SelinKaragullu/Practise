@@ -15,7 +15,7 @@ const handleClick = (getCurrentId)=>{
     setSelected(selected === getCurrentId ? null : getCurrentId)
 }
 
-
+<QRCode></QRCode>
 
 
 const handleMultipleSelection = (getCurrentId) => {
