@@ -4,7 +4,7 @@ import './index.css'
 import App from './App.jsx'
 import {BrowserRouter,Route,Routes} from 'react-router-dom'
 import GlobalState from './context/index.jsx'
-import GlobalState from './context/index.jsx'
+
 
 
 createRoot(document.getElementById('root')).render(
