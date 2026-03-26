@@ -1,13 +1,20 @@
+import { useContext } from "react"
 import {Link} from "react-router-dom"
+import { GlobalContext } from "../context"
 
 
 export default function Navbar () {
+const {searchParam, setSearchParam, handleSubmit} = useContext(GlobalContext)
+
 return (<nav>
 <Link to="/">Food Recipe</Link>
-<form action="">
+<form onSubmit={handleSubmit} action="">
     <input
     type="text"
-    placeholder="search recipe..."/> 
+    placeholder="search recipe..."
+    value={searchParam}
+    onChange={(event)=>setSearchParam(event.target.value)}
+    /> 
     
 </form>
    <ul>
