@@ -8,6 +8,10 @@ import {useState} from "react"
 const [searchParam,setSearchParam] = useState("")
 const [recipeList,setRecipeList] = useState([])
 const [loading,setLoading] = useState(false)
+const [recipeDetailsData,setRecipeDetailsData] = useState(null)
+
+
+
 async function handleSubmit(event) {
     event.preventDefault()
 try {
@@ -27,7 +31,7 @@ setLoading(false)
 
 return(
     <GlobalContext.Provider value={{
-        searchParam,setSearchParam,recipeList,setRecipeList,loading,setLoading,handleSubmit
+        searchParam,setSearchParam,recipeList,setRecipeList,loading,setLoading,handleSubmit, recipeDetailsData,setRecipeDetailsData
     }}>
 {children}
 
