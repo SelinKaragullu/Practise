@@ -4,7 +4,7 @@ import { GlobalContext } from './context'
 
 export default function Details () {
     const {id} =useParams ()
-const {setRecipeDetailsData, recipeDetailsData} = useContext(GlobalContext)
+const {setRecipeDetailsData, recipeDetailsData, handleAddToFavorite} = useContext(GlobalContext)
 
 useEffect (()=>{
 async function fetchingData() {

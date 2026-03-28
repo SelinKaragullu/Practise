@@ -9,7 +9,19 @@ const [searchParam,setSearchParam] = useState("")
 const [recipeList,setRecipeList] = useState([])
 const [loading,setLoading] = useState(false)
 const [recipeDetailsData,setRecipeDetailsData] = useState(null)
+const [favoritesList,setFavoritesList] = useState([])
 
+
+function handleAddToFavorite(getCurrentItem) {
+const isFavorite = favoritesList.some((item)=>item.id===getCurrentItem.id)
+if(isFavorite){
+    const newFavorites = favoritesList.filter((item)=> item.id !== getCurrentItem.id)
+    setFavoritesList(newFavorites)
+}else {
+    setFavoritesList([...favoritesList, getCurrentItem])
+}
+
+}
 
 
 async function handleSubmit(event) {
@@ -31,7 +43,7 @@ setLoading(false)
 
 return(
     <GlobalContext.Provider value={{
-        searchParam,setSearchParam,recipeList,setRecipeList,loading,setLoading,handleSubmit, recipeDetailsData,setRecipeDetailsData
+        searchParam,setSearchParam,recipeList,setRecipeList,loading,setLoading,handleSubmit, recipeDetailsData,setRecipeDetailsData, handleAddToFavorite,favoritesList
     }}>
 {children}
 
